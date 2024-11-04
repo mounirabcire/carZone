@@ -4,25 +4,6 @@ const GlobalStyles = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-    /* colors --light mode */
-    --blue-5: #e7ecf0; /* background */
-    --blue-10: #caddf0; /* intractive componenets*/
-    --blue-15: #88b3de; /* borders & separators*/
-    --blue-20: #609cd5; /* borders & separators*/
-    --blue-25: #2185d5; /* solid */
-    --blue-30: #0778c7; /* solid */
-    --blue-35: #0065b2; /*  text */
-    --blue-40: #0d3659; /* text */
-
-    --gray-5: #ebebeb; /* background */
-    --gray-10: #d9d9d9; /* intractive componenets*/
-    --gray-15: #c8c8c8; /* borders & separators*/
-    --gray-20: #a9a9a9; /* borders & separators*/
-    --gray-25: #7c7c7c; /* solid */
-    --gray-30: #717171; /* solid */
-    --gray-35: #545454; /*  text */
-    --gray-40: #202020; /* text */
-
     /* colors --black mode */
     --blue-5: #283847; /* background */
     --blue-10: #124e7f; /* intractive componenets*/
@@ -41,6 +22,25 @@ const GlobalStyles = createGlobalStyle`
     --gray-30: #848484; /* solid */
     --gray-35: #b8b8b8; /*  text */
     --gray-40: #eeeeee; /* text */
+
+    /* colors --light mode */
+    --blue-5: #e7ecf0; /* background */
+    --blue-10: #caddf0; /* intractive componenets*/
+    --blue-15: #88b3de; /* borders & separators*/
+    --blue-20: #609cd5; /* borders & separators*/
+    --blue-25: #2185d5; /* solid */
+    --blue-30: #0778c7; /* solid */
+    --blue-35: #0065b2; /*  text */
+    --blue-40: #0d3659; /* text */
+
+    --gray-5: #ebebeb; /* background */
+    --gray-10: #d9d9d9; /* intractive componenets*/
+    --gray-15: #c8c8c8; /* borders & separators*/
+    --gray-20: #a9a9a9; /* borders & separators*/
+    --gray-25: #7c7c7c; /* solid */
+    --gray-30: #717171; /* solid */
+    --gray-35: #545454; /*  text */
+    --gray-40: #202020; /* text */
 
     /* sizes */
     --font-size-6xxl: 96px;
@@ -124,7 +124,7 @@ ul {
 }
 
 button {
-    font-family: inherit;
+    font-family: "Montserrat", sans-serif;
 }
 
 a:link,
