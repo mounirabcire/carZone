@@ -5,25 +5,28 @@ const GlobalStyles = createGlobalStyle`
 
 :root {
     /* colors --black mode */
-    --blue-5: #283847; /* background */
-    --blue-10: #124e7f; /* intractive componenets*/
-    --blue-15: #2173b6; /* borders & separators*/
-    --blue-20: #1f83d3; /* borders & separators*/
-    --blue-25: #2185d5; /* solid */
-    --blue-30: #2878bc; /* solid */
-    --blue-35: #72c2ff; /*  text */
-    --blue-40: #c6e9ff; /* text */
+    /* --blue-0: #273542;
+    --blue-5: #283847; 
+    --blue-10: #124e7f; 
+    --blue-15: #2173b6;  
+    --blue-20: #1f83d3;  
+    --blue-25: #2185d5; 
+    --blue-30: #2878bc; 
+    --blue-35: #72c2ff; 
+    --blue-40: #c6e9ff; 
 
-    --gray-5: #393939; /* background */
-    --gray-10: #444444; /* intractive componenets*/
-    --gray-15: #595959; /* borders & separators*/
-    --gray-20: #6f6f6f; /* borders & separators*/
-    --gray-25: #7a7a7a; /* solid */
-    --gray-30: #848484; /* solid */
-    --gray-35: #b8b8b8; /*  text */
-    --gray-40: #eeeeee; /* text */
+    -gray-0: #333333;
+    --gray-5: #393939; 
+    --gray-10: #444444; 
+    --gray-15: #595959;  
+    --gray-20: #6f6f6f;  
+    --gray-25: #7a7a7a; 
+    --gray-30: #848484; 
+    --gray-35: #b8b8b8; 
+    --gray-40: #eeeeee;  */
 
     /* colors --light mode */
+    --blue-0: #EEF0F2;
     --blue-5: #e7ecf0; /* background */
     --blue-10: #caddf0; /* intractive componenets*/
     --blue-15: #88b3de; /* borders & separators*/
@@ -33,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
     --blue-35: #0065b2; /*  text */
     --blue-40: #0d3659; /* text */
 
+    --gray-0: #f0f0f0;
     --gray-5: #ebebeb; /* background */
     --gray-10: #d9d9d9; /* intractive componenets*/
     --gray-15: #c8c8c8; /* borders & separators*/
@@ -76,6 +80,9 @@ html {
 }
 
 body {
+    background-color: var(--gray-0);
+    background-color: #000;
+    color: var(--gray-35);
     font-size: var(--font-size-base);
     line-height: 1.7;
     font-family: "Lora", serif;
@@ -87,6 +94,7 @@ h3,
 h4,
 h5,
 h6 {
+    color: var(--gray-40);
     font-family: "Montserrat", sans-serif;
     line-height: 1.1;
 }
