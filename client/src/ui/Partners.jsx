@@ -32,7 +32,7 @@ const PartnersStyled = styled.div`
 const PartnerStyled = styled.div`
     width: 25rem;
     height: 33rem;
-    border: 3px solid var(--gray-15);
+    border: var(--border-gray-3);
     border-radius: var(--border-radius-xl);
     box-shadow: 4px 11px 13px 4px rgba(44, 44, 44, 0.29);
     position: relative;
@@ -89,7 +89,7 @@ const PartnerStyled = styled.div`
         top: 0;
         left: 0;
         transform-origin: center;
-        transition: transform .7s cubic-bezier(0.61, 1, 0.88, 1);
+        transition: transform 0.7s cubic-bezier(0.61, 1, 0.88, 1);
     }
 `;
 
@@ -99,12 +99,7 @@ function Partners({ partners }) {
     return (
         <PartnersStyled>
             <div className="slider">
-                {partners.map((partner, idx) => (
-                    <Partner key={idx} partner={partner} />
-                ))}
-            </div>
-            <div className="slider">
-                {partners.map((partner, idx) => (
+                {[...partners, ...partners].map((partner, idx) => (
                     <Partner key={idx} partner={partner} />
                 ))}
             </div>
