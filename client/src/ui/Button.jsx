@@ -143,7 +143,6 @@ const variations = {
 };
 
 const Button = styled.button`
-    margin: 1.6rem;
     border: 2px solid;
     cursor: pointer;
 
