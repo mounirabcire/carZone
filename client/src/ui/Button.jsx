@@ -1,5 +1,32 @@
 import styled, { css } from "styled-components";
 
+const sharedMainStyle = css`
+    color: #fff;
+    background-color: var(--blue-25);
+    border-color: transparent;
+
+    &:hover {
+        background-color: var(--blue-30);
+    }
+
+    &:active {
+        background-color: var(--blue-35);
+    }
+`;
+const shareGhostWhiteStyle = css`
+    color: #fff;
+    background-color: transparent;
+`;
+const shareGhostGrayStyle = css`
+    color: var(--gray-35);
+    background-color: transparent;
+`;
+const sharedBlackStyle = css`
+    color: var(--gray-40);
+    background-color: transparent;
+    border-color: transparent;
+`;
+
 const sizes = {
     normal: css`
         padding: 0.8rem 2.4rem;
@@ -30,26 +57,14 @@ const sizes = {
 
 const variations = {
     main: css`
-        color: #fff;
-        background-color: var(--blue-25);
-        border-color: transparent;
         border-radius: var(--border-radius-small);
         transition: background 0.2s;
-
-        &:hover {
-            background-color: var(--blue-30);
-        }
-
-        &:active {
-            background-color: var(--blue-35);
-        }
+        ${sharedMainStyle}
     `,
 
     mainRounded: css`
-        color: #fff;
-        background-color: var(--blue-25);
-        border-color: transparent;
         border-radius: var(--border-radius-full);
+        ${sharedMainStyle}
     `,
 
     mainLinear: css`
@@ -68,15 +83,6 @@ const variations = {
         background-color: var(--gray-40);
         border-color: transparent;
         border-radius: var(--border-radius-small);
-        transition: background 0.2s;
-
-        &:hover {
-            background-color: var(--gray-35);
-        }
-
-        &:active {
-            background-color: var(--gray-40);
-        }
     `,
 
     tertiary: css`
@@ -84,53 +90,36 @@ const variations = {
         background-color: #fff;
         border-color: transparent;
         border-radius: var(--border-radius-small);
-        transition: background 0.2s;
-
-        &:hover {
-            background-color: var(--gray-35);
-        }
-
-        &:active {
-            background-color: var(--gray-40);
-        }
     `,
 
     ghostWhite: css`
-        color: #fff;
-        background-color: transparent;
         border-color: transparent;
+        ${shareGhostWhiteStyle}
     `,
 
     ghostWhiteBordered: css`
-        color: #fff;
-        background-color: transparent;
         border-color: #fff;
         border-radius: var(--border-radius-small);
+        ${shareGhostWhiteStyle}
     `,
 
     ghostBlack: css`
-        color: var(--gray-40);
-        background-color: transparent;
-        border-color: transparent;
+        ${sharedBlackStyle}
     `,
 
     ghostGray: css`
-        color: var(--gray-35);
-        background-color: transparent;
         border-color: transparent;
+        ${shareGhostGrayStyle}
     `,
 
     ghostGrayBordered: css`
-        color: var(--gray-35);
-        background-color: transparent;
         border-color: var(--gray-35);
         border-radius: var(--border-radius-xl);
+        ${shareGhostGrayStyle}
     `,
 
     ghostLinked: css`
-        color: var(--gray-40);
-        background-color: transparent;
-        border-color: transparent;
+        ${sharedBlackStyle}
         text-decoration: underline;
     `,
 
@@ -146,8 +135,8 @@ const Button = styled.button`
     border: 2px solid;
     cursor: pointer;
 
-    ${({ size }) => sizes[size]}
-    ${({ variation }) => variations[variation]}
+    ${({ $size }) => sizes[$size]}
+    ${({ $variation }) => variations[$variation]}
     ${({ as }) =>
         as === "a" &&
         css`
@@ -156,8 +145,8 @@ const Button = styled.button`
 `;
 
 Button.defaultProps = {
-    size: "normal",
-    variation: "main",
+    $size: "normal",
+    $variation: "main",
 };
 
 export default Button;
