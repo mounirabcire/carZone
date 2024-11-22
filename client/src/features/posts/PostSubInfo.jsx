@@ -12,7 +12,7 @@ function PostSubInfo({ currency, price }) {
                 <p className="post__price--old">{oldPrice}</p>
             </div>
 
-            <Button size="small">
+            <Button $size="small">
                 Details
             </Button>
         </div>
