@@ -11,12 +11,12 @@ function PostSave({
     const [savedCount, setSavedCount] = useState(() => savedCountInit);
 
     const notifySuccess = () =>
-        toast.success(`${postName} has been saved successfully!`, {
+        toast.success(`"${postName}" post has been saved successfully!`, {
             icon: "📌",
         });
 
     const notifyWarning = () =>
-        toast.warning(`${postName} has been unsaved!`, {
+        toast.warning(`"${postName}" post has been unsaved!`, {
             icon: "❌",
         });
 
