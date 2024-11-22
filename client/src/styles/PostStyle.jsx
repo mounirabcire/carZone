@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const PostsContainerStyled = styled.div`
-width: 100%;
-display: grid;
-grid-template-columns: repeat(auto-fill, 300px);
-justify-content: center;
-gap: var(--spacing-8);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+    gap: var(--spacing-8);
 `;
 
 export const PostStyle = styled.div`
@@ -127,7 +127,7 @@ export const PostStyle = styled.div`
                 font-size: 14px;
             }
 
-            & > span:last-child{
+            & > span:last-child {
                 font-size: var(--font-size-tiny);
                 font-weight: 600;
             }
