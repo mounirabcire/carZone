@@ -42,3 +42,127 @@ export const partnersData = [
         img: "/assets/images/partners/partner__img-8.jpg",
     },
 ];
+
+export const postsData = [
+    {
+        postImage: "/assets/images/cars/car-5.jpg",
+        postName: "BMW M3",
+        postCategorie: "rent",
+        PostMainDetails: {
+            transmission: "Automatic",
+            fuel: "Petrol",
+            rentalPeriod: "Per Month",
+            seatingCapacity: "5 Seats",
+        },
+        price: { newPrice: 3500, oldPrice: 4000 },
+        currency: "USD",
+        saved: 160,
+        isSaved: true, // temporarily
+    },
+    {
+        postImage: "/assets/images/cars/car-2.jpg",
+        postName: "Toyota Camry",
+        postCategorie: "sell",
+        PostMainDetails: {
+            year: "2021",
+            transmission: "Automatic",
+            fuel: "Hybrid",
+            mileage: "10,000km",
+        },
+        price: { newPrice: 28000, oldPrice: 30000 },
+        currency: "USD",
+        saved: 85,
+        isSaved: false, // temporarily
+    },
+    {
+        postImage: "/assets/images/cars/car-4.jpg",
+        postName: "Honda Accord",
+        postCategorie: "sell",
+        PostMainDetails: {
+            year: "2020",
+            transmission: "Automatic",
+            fuel: "Petrol",
+            mileage: "15,000km",
+        },
+        price: { newPrice: 25000, oldPrice: 27000 },
+        currency: "USD",
+        saved: 95,
+        isSaved: false, // temporarily
+    },
+    {
+        postImage: "/assets/images/cars/accessory-2.jpg",
+        postName: "Roof Rack",
+        postCategorie: "accessory",
+        PostMainDetails: {
+            compatibility: "All vehicle types with roof bars",
+            colors: ["Black", "Silver"],
+            material: "Aluminum",
+            condition: "New",
+        },
+        price: { newPrice: 300, oldPrice: 350 },
+        currency: "USD",
+        saved: 60,
+        isSaved: false, // temporarily
+    },
+    {
+        postImage: "/assets/images/cars/car-6.jpg",
+        postName: "Chevrolet Silverado",
+        postCategorie: "sell",
+        PostMainDetails: {
+            year: "2019",
+            transmission: "Automatic",
+            fuel: "Diesel",
+            mileage: "25,000km",
+        },
+        price: { newPrice: 35000, oldPrice: 38000 },
+        currency: "USD",
+        saved: 75,
+        isSaved: true, // temporarily
+    },
+    {
+        postImage: "/assets/images/cars/car-3.jpg",
+        postName: "Ford Mustang",
+        postCategorie: "rent",
+        PostMainDetails: {
+            transmission: "Manual",
+            fuel: "Petrol",
+            rentalPeriod: "Per Day",
+            seatingCapacity: "2 Seats",
+        },
+        price: { newPrice: 750, oldPrice: 800 },
+        currency: "USD",
+        saved: 190,
+        isSaved: true, // temporarily
+    },
+    {
+        postImage: "/assets/images/cars/accessory-1.jpg",
+        postName: "All-Weather Floor Mats",
+        postCategorie: "accessory",
+        PostMainDetails: {
+            compatibility: "SUVs, Sedans",
+            colors: ["Black", "Gray", "Beige"],
+            material: "Rubber",
+            condition: "New",
+        },
+        price: { newPrice: 150, oldPrice: 200 },
+        currency: "USD",
+        saved: 40,
+        isSaved: false, // temporarily
+    },
+
+    {
+        postImage: "/assets/images/cars/car-7.jpg",
+        postName: "Range Rover SVR",
+        postCategorie: "sell",
+        PostMainDetails: {
+            year: "2022",
+            transmission: "Automatic",
+            fuel: "Petrol",
+            mileage: "5,000km",
+        },
+        price: { newPrice: 48000, oldPrice: 55000 },
+        currency: "USD",
+        saved: 0,
+        isSaved: false, // temporarily
+    },
+];
