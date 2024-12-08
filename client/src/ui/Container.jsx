@@ -6,23 +6,23 @@ const Container = styled.div`
     padding: 0 2rem;
 
     @media (min-width: 40em) {
-        max-width: 640px;
+        max-width: 720px;
     }
 
     @media (min-width: 48em) {
-        max-width: 768px;
+        max-width: 864px;
     }
 
     @media (min-width: 64em) {
-        max-width: 1024px;
+        max-width: 1152px;
     }
 
     @media (min-width: 80em) {
-        max-width: 1280px;
+        max-width: 1440px;
     }
 
     @media (min-width: 96em) {
-        max-width: 1536px;
+        max-width: 1728px;
     }
 `;
 

@@ -29,8 +29,9 @@ const sharedBlackStyle = css`
 
 const sizes = {
     normal: css`
-        padding: 0.8rem 2.4rem;
-        font-size: var(--font-size-md);
+        padding: 0.8rem 1.2rem;
+        font-size: var(--font-size-base);
+        font-weight: 500;
     `,
 
     small: css`
@@ -43,7 +44,8 @@ const sizes = {
         width: 3.5rem;
         height: 3.5rem;
         padding: 1.6rem;
-        font-size: var(--font-size-md);
+        font-size: var(--font-size-base);
+        font-weight: 500;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -51,7 +53,8 @@ const sizes = {
 
     none: css`
         padding: 0;
-        font-size: var(--font-size-md);
+        font-size: var(--font-size-base);
+        font-weight: 500;
     `,
 };
 
