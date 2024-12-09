@@ -1,37 +1,27 @@
-import { useTranslation } from "react-i18next";
-import i18n from "./utils/i18n";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-const languages = [
-    {
-        code: "en",
-        name: "English",
-    },
-    {
-        code: "fr",
-        name: "Français",
-    },
-    {
-        code: "ar",
-        name: "العربية",
-    },
-];
+import Home from "./pages/Home";
+import Marketplace from "./pages/Marketplace";
+import Gallery from "./pages/Gallery";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+import PageNotFound from "./pages/PageNotFound";
+import AppLayout from "./ui/AppLayout";
+
 function App() {
-    const { t } = useTranslation();
     return (
-        <div>
-            <h1>{t("welcomeReact")}</h1>
-            <ul>
-                {languages.map((language) => (
-                    <li key={language.code}>
-                        <button
-                            onClick={() => i18n.changeLanguage(language.code)}
-                        >
-                            {language.name}
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route element={<AppLayout />}>
+                    <Route index element={<Home />} />
+                    <Route path="marketplace" element={<Marketplace />} />
+                    <Route path="gallery" element={<Gallery />} />
+                    <Route path="blog" element={<Blog />} />
+                    <Route path="contact" element={<Contact />} />
+                    <Route path="*" element={<PageNotFound />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     );
 }
 
