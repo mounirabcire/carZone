@@ -1,9 +1,17 @@
 function Blog() {
     return (
-        <div>
+        <div
+            style={{
+                height: "100vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontSize: 120,
+            }}
+        >
             Blog
         </div>
-    )
+    );
 }
 
-export default Blog
+export default Blog;

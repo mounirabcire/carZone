@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 :root {
     /* colors --black mode */
     /* --blue-0: #273542;
@@ -46,6 +44,11 @@ const GlobalStyles = createGlobalStyle`
     --gray-35: #545454; /*  text */
     --gray-40: #202020; /* text */
 
+    --success: #4BB543;
+    --error: #D32F2F;
+    --warning: #FFB100;
+    --warning-text: #333;
+
     /* sizes */
     --font-size-6xxl: 96px;
     --font-size-5xl: 72px;
@@ -60,11 +63,41 @@ const GlobalStyles = createGlobalStyle`
     --font-size-micro: 10px;
     --font-size-nano: 8px;
 
+    /* border */
+    --border-gray-3: 3px solid var(--gray-15);
+    --border-gray-2: 2px solid var(--gray-15);
+    --border-gray-1: 1px solid var(--gray-15);
+
     /* border-radius */
     --border-radius-small: 4px;
     --border-radius-medium: 8px;
     --border-radius-large: 16px;
+    --border-radius-xl: 24px;
+    --border-radius-xxl: 50px;
     --border-radius-full: 100%;
+
+    /* spacing */
+    --spacing-0: 0px;
+    --spacing-1: 4px;
+    --spacing-2: 8px;
+    --spacing-3: 12px;
+    --spacing-4: 16px;
+    --spacing-5: 20px;
+    --spacing-6: 24px;
+    --spacing-7: 28px;
+    --spacing-8: 32px;
+    --spacing-9: 36px;
+    --spacing-10: 40px;
+    --spacing-12: 48px;
+    --spacing-14: 56px;
+    --spacing-16: 64px;
+    --spacing-20: 80px;
+    --spacing-24: 96px;
+    --spacing-32: 128px;
+    --spacing-40: 160px;
+    --spacing-48: 192px;
+    --spacing-56: 224px;
+    --spacing-64: 256px;
 }
 
 *,
@@ -79,13 +112,58 @@ html {
     font-size: 62.5%;
 }
 
+/* Extra large devices (87.5% font-size applied at 1400px and up) */
+@media (min-width: 87.5em) { /* 1400px / 16 = 87.5em */
+    html {
+        font-size: 87.5%; /* 1rem = 14px */
+    }
+}
+
+/* Large devices (1200px and below) */
+/* 1200px / 16 = 75em */
+/* 1rem = 10px */
+/* @media (max-width: 75em) { 
+    html {
+        font-size: 62.5%;
+    }
+} */
+
+/* Medium devices (992px and below) */
+@media (max-width: 62em) { /* 992px / 16 = 62em */
+    html {
+        font-size: 56.25%; /* 1rem = 9px */
+    }
+}
+
+/* Small devices (768px and below) */
+@media (max-width: 48em) { /* 768px / 16 = 48em */
+    html {
+        font-size: 50%; /* 1rem = 8px */
+    }
+}
+
+/* Extra small devices (600px and below) */
+@media (max-width: 37.5em) { /* 600px / 16 = 37.5em */
+    html {
+        font-size: 46.875%; /* 1rem = 7.5px */
+    }
+}
+
+/* Very small devices (400px and below) */
+@media (max-width: 25em) { /* 400px / 16 = 25em */
+    html {
+        font-size: 43.75%; /* 1rem = 7px */
+    }
+}
+
+
 body {
     background-color: var(--gray-0);
-    background-color: #000;
     color: var(--gray-35);
     font-size: var(--font-size-base);
     line-height: 1.7;
     font-family: "Lora", serif;
+    /* overflow-x: hidden; */
 }
 
 h1,
@@ -146,12 +224,15 @@ a:active {
 }
 
 input,
-textarea {
+textarea,
+select {
     font-family: inherit;
+    font-size: inherit;
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
     outline: none;
 }
 
@@ -164,6 +245,14 @@ textarea {
     resize: none;
 }
 
+/* Toastify Configuration */
+.Toastify__toast {
+    font-size: var(--font-size-tiny);
+    font-family: "Lora", serif;
+    font-weight: 500;
+    background-color: var(--gray-0);
+    color: var(--gray-40)
+}
 `;
 
 export default GlobalStyles;
