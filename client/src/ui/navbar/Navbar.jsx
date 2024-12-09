@@ -3,7 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import NavStyle from "../../styles/NavbarStyle";
 import Button from "../Button";
 import Container from "../Container";
-import Logo from "../Logo";
+import Logo from "./Logo";
 import MenuToggle from "./MenuToggle";
 import Menu from "./Menu";
 
