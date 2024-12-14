@@ -1,4 +1,15 @@
-function PostAccessoryInfoList({ compatibility, colors, material, condition }) {
+interface AccessoryDetails {
+    details: {
+        compatibility: string;
+        colors: string[];
+        material: string;
+        condition: "new" | "used";
+    };
+}
+
+function PostAccessoryInfoList({ details }: AccessoryDetails) {
+    const { compatibility, colors, material, condition } = details;
+
     return (
         <ul className="post__info-list">
             <li className="post__info-item">

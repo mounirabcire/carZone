@@ -44,7 +44,12 @@ const MenuStyled = styled(motion.div)`
     }
 `;
 
-function Menu({ isOpened, onClose }) {
+interface MenuProps {
+    isOpened: boolean;
+    onClose: () => void;
+}
+
+function Menu({ isOpened, onClose }: MenuProps) {
     return (
         <MenuStyled
             className="nav__menu"

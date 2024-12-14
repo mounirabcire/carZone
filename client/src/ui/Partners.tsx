@@ -1,9 +1,15 @@
-import { PartnersContainerStyled, PartnerStyled } from "../styles/PartnerStyle";
+import PartnersContainerStyled from "../styles/PartnersStyle";
 
-// FIXME: The carousel is not working properly
+interface PartnersProps {
+    partners: { fullName: string; profession: string; img: string }[];
+}
 
-function Partners({ partners }) {
-    if (!partners) return;
+interface PartnerProps {
+    partner: { fullName: string; profession: string; img: string };
+}
+
+function Partners({ partners }: PartnersProps) {
+    if (!partners.length) return null;
 
     return (
         <PartnersContainerStyled>
@@ -13,23 +19,25 @@ function Partners({ partners }) {
                 ))}
             </div>
             <div className="slider">
-                {partners.map((partner, idx) => (
-                    <Partner key={idx} partner={partner} />
+                {partners.map((partner) => (
+                    <Partner key={partner.fullName} partner={partner} />
                 ))}
             </div>
         </PartnersContainerStyled>
     );
 }
 
-function Partner({ partner: { fullName, profession, img } }) {
+function Partner({ partner }: PartnerProps) {
+    const { fullName, profession, img } = partner;
+
     return (
-        <PartnerStyled>
+        <div className="partner">
             <div className="partner__info">
                 <h6 className="partner__fullName">{fullName}</h6>
                 <p className="partner__profession">{profession}</p>
             </div>
             <img src={img} alt={profession} className="partner__pic" />
-        </PartnerStyled>
+        </div>
     );
 }
 

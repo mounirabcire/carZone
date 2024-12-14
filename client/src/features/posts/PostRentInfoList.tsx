@@ -1,9 +1,18 @@
-function PostRentInfoList({
-    rentalPeriod,
-    seatingCapacity,
-    fuel,
-    transmission,
-}) {
+type FuelType = "petrol" | "diesel" | "hybrid" | "electric";
+type Transmission = "automatic" | "manual";
+
+interface RentDetails {
+    details: {
+        transmission: Transmission;
+        fuel: FuelType;
+        rentalPeriod: "per day" | "per month" | "per week" | "per hour";
+        seatingCapacity: string;
+    };
+}
+
+function PostRentInfoList({ details }: RentDetails) {
+    const { rentalPeriod, seatingCapacity, fuel, transmission } = details;
+
     return (
         <ul className="post__info-list">
             <li className="post__info-item">

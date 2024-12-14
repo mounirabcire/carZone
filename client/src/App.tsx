@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import AppLayout from "./ui/AppLayout";
 import Home from "./pages/Home";
 import Marketplace from "./pages/Marketplace";
 import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import PageNotFound from "./pages/PageNotFound";
-import AppLayout from "./ui/AppLayout";
 
 function App() {
     return (

@@ -1,13 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import FilterOptionsContainer from "../styles/FilterOptionStyle";
 
-function FilterOptions({ options = [] }) {
+interface FilterOptionProps {
+    options: string[];
+}
+
+function FilterOptions({ options }: FilterOptionProps) {
     const [activeOption, setActiveOption] = useState(0);
 
-    const filterContainer = useRef(null);
-    const bgOverlay = useRef(null);
+    const filterContainer = useRef<HTMLDivElement | null>(null);
+    const bgOverlay = useRef<HTMLDivElement | null>(null);
 
-    const updateOverlayPosition = (childElement) => {
+    const updateOverlayPosition = (childElement: HTMLLIElement) => {
         if (!filterContainer.current || !bgOverlay.current || !childElement)
             return;
 
@@ -22,15 +26,18 @@ function FilterOptions({ options = [] }) {
         bgOverlay.current.style.width = `${childWidth + 16}px`;
     };
 
-    const handleActiveOption = (event, id) => {
+    const handleActiveOption = (
+        event: React.MouseEvent<HTMLLIElement, MouseEvent>,
+        id: number
+    ) => {
         setActiveOption(id);
-        updateOverlayPosition(event.target);
+        updateOverlayPosition(event.target as HTMLLIElement);
     };
 
     useEffect(() => {
         const firstChild = filterContainer.current?.querySelector(
             ".filter-options__item"
-        );
+        ) as HTMLLIElement;
         updateOverlayPosition(firstChild);
     }, []);
 
