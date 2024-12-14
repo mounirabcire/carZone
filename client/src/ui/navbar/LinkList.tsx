@@ -69,11 +69,22 @@ const links = [
     { path: "/contact", label: "Contact" },
 ];
 
-function LinkList({ isOpened, onClose }) {
-    const listContainer = useRef(null);
-    const bgOverlay = useRef(null);
+interface LinkListProps {
+    isOpened: boolean;
+    onClose: () => void;
+}
 
-    const updateOverlayPosition = (childElement) => {
+interface LinkItemProps {
+    onClose: () => void;
+    link: { path: string; label: string };
+    onUpdateOverlayPos: (target: HTMLAnchorElement) => void;
+}
+
+function LinkList({ isOpened, onClose }: LinkListProps) {
+    const listContainer = useRef<HTMLUListElement | null>(null);
+    const bgOverlay = useRef<HTMLDivElement | null>(null);
+
+    const updateOverlayPosition = (childElement: HTMLAnchorElement) => {
         if (!listContainer.current || !bgOverlay.current || !childElement)
             return;
 
@@ -89,12 +100,14 @@ function LinkList({ isOpened, onClose }) {
     };
 
     useEffect(() => {
-        let set;
+        let set: ReturnType<typeof setTimeout>;
         if (isOpened && listContainer.current) {
             // Find the active link element inside the list container
             const activeChild = Array.from(
                 listContainer.current.querySelectorAll(".nav__link")
-            ).find((element) => element.classList.contains("active"));
+            ).find((element) =>
+                element.classList.contains("active")
+            ) as HTMLAnchorElement;
 
             set = setTimeout(() => {
                 if (activeChild) updateOverlayPosition(activeChild);
@@ -123,11 +136,13 @@ function LinkList({ isOpened, onClose }) {
     );
 }
 
-function LinkItem({ link, onClose, onUpdateOverlayPos }) {
+function LinkItem({ link, onClose, onUpdateOverlayPos }: LinkItemProps) {
     const { path, label } = link;
 
-    const handleClick = (event) => {
-        onUpdateOverlayPos(event.target);
+    const handleClick = (
+        event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+    ) => {
+        onUpdateOverlayPos(event.target as HTMLAnchorElement);
         setTimeout(() => {
             onClose();
         }, 350);

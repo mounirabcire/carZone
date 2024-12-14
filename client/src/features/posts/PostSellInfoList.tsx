@@ -1,4 +1,18 @@
-function PostSellInfoList({ year, transmission, fuel, mileage }) {
+type FuelType = "petrol" | "diesel" | "hybrid" | "electric";
+type Transmission = "automatic" | "manual";
+
+interface SellDetails {
+    details: {
+        year: string;
+        transmission: Transmission;
+        fuel: FuelType;
+        mileage: string;
+    };
+}
+
+function PostSellInfoList({ details }: SellDetails) {
+    const { year, transmission, fuel, mileage } = details;
+
     return (
         <ul className="post__info-list">
             <li className="post__info-item">

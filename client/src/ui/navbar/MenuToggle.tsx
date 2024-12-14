@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
+interface MenuToggleProps {
+    isOpened: boolean;
+    onOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
 const MenuToggleStyle = styled.div`
     padding: 0.8rem 1.2rem;
     color: var(--gray-40);
@@ -96,7 +101,7 @@ const MenuToggleStyle = styled.div`
     }
 `;
 
-function MenuToggle({ isOpened, onOpen }) {
+function MenuToggle({ isOpened, onOpen }: MenuToggleProps) {
     return (
         <MenuToggleStyle
             className={`${isOpened ? "active" : ""}`}

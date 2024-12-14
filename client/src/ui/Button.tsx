@@ -134,12 +134,17 @@ const variations = {
     `,
 };
 
-const Button = styled.button`
+interface ButtonProps {
+    $size?: keyof typeof sizes;
+    $variation?: keyof typeof variations;
+}
+
+const Button = styled.button<ButtonProps>`
     border: 2px solid;
     cursor: pointer;
 
-    ${({ $size }) => sizes[$size]}
-    ${({ $variation }) => variations[$variation]}
+    ${({ $size }) => $size && sizes[$size]}
+    ${({ $variation }) => $variation && variations[$variation]}
     ${({ as }) =>
         as === "a" &&
         css`
