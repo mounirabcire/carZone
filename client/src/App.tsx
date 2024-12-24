@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import AppLayout from "./ui/AppLayout";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import Marketplace from "./pages/Marketplace";
 import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
