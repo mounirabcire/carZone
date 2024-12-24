@@ -1,15 +1,13 @@
 import styled from "styled-components";
 
-const PostsContainerStyled = styled.div`
+const PostsStyled = styled.div`
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
     justify-content: center;
     gap: var(--spacing-8);
 
     & .post {
-        width: 300px;
-        min-width: 300px;
         background-color: var(--gray-5);
         display: flex;
         flex-direction: column;
@@ -27,4 +25,4 @@ const PostsContainerStyled = styled.div`
     }
 `;
 
-export default PostsContainerStyled;
+export default PostsStyled;
