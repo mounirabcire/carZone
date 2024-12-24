@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PostSave from "./PostSave";
+import LazyImg from "../../ui/LazyImg";
 
 interface PostImageProps {
     postImage: string;
@@ -36,7 +37,7 @@ function PostImage({
 }: PostImageProps) {
     return (
         <PostImageStyle>
-            <img src={postImage} alt={postName} className="post__image" />
+            <LazyImg src={postImage} alt={postName} className="post__image" />
 
             <PostSave
                 isSaved={isSaved}

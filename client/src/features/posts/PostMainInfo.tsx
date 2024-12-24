@@ -4,7 +4,7 @@ import PostAccessoryInfoList from "./PostAccessoryInfoList";
 import PostRentInfoList from "./PostRentInfoList";
 import styled from "styled-components";
 
-type PostCategoryType = "rent" | "sell" | "accessory";
+type PostCategoryType = "rent" | "sell" | "accessories";
 type FuelType = "petrol" | "diesel" | "hybrid" | "electric";
 type Transmission = "automatic" | "manual";
 
@@ -88,11 +88,12 @@ function PostMainInfo({ postName, postCategory, details }: PostMainInfoProps) {
                     <PostSellInfoList details={details as SellDetails} />
                 )}
 
-                {postCategory === "accessory" && (
+                {postCategory === "accessories" && (
                     <PostAccessoryInfoList
                         details={details as AccessoryDetails}
                     />
                 )}
+
                 {postCategory === "rent" && (
                     <PostRentInfoList details={details as RentDetails} />
                 )}
