@@ -1,12 +1,16 @@
 import { useEffect, useRef, useState } from "react";
+import { useAppDispatch } from "../app/hooks";
 import FilterOptionsContainer from "../styles/FilterOptionStyle";
+import { setPostOption } from "../app/features/homePostOptionSlice";
 
+type HomePostOptionState = "view all" | "cars" | "accessories";
 interface FilterOptionProps {
     options: string[];
 }
 
 function FilterOptions({ options }: FilterOptionProps) {
     const [activeOption, setActiveOption] = useState(0);
+    const dispatch = useAppDispatch();
 
     const filterContainer = useRef<HTMLDivElement | null>(null);
     const bgOverlay = useRef<HTMLDivElement | null>(null);
@@ -32,6 +36,11 @@ function FilterOptions({ options }: FilterOptionProps) {
     ) => {
         setActiveOption(id);
         updateOverlayPosition(event.target as HTMLLIElement);
+        dispatch(
+            setPostOption(
+                event.currentTarget.textContent as HomePostOptionState
+            )
+        );
     };
 
     useEffect(() => {
