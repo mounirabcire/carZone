@@ -129,8 +129,10 @@ const variations = {
     blured: css`
         color: #fff;
         border-color: transparent;
-        background-color: rgba(32, 32, 32, 0.3);
-        backdrop-filter: blur(15px);
+        border-radius: var(--border-radius-small);
+        background-color: rgba(32, 32, 32, 0.1);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
     `,
 };
 

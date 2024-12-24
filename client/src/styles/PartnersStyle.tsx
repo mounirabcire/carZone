@@ -7,7 +7,6 @@ const infiniteCarousel = keyframes`
 `;
 
 const PartnersContainerStyled = styled.div`
-    padding-block: var(--spacing-6);
     display: flex;
     gap: var(--spacing-9);
     user-select: none;
@@ -25,7 +24,7 @@ const PartnersContainerStyled = styled.div`
         display: flex;
         justify-content: space-between;
         gap: var(--spacing-9);
-        animation: ${infiniteCarousel} 50s linear infinite;
+        animation: ${infiniteCarousel} 100s linear infinite;
     }
 
     & .partner {
@@ -33,7 +32,7 @@ const PartnersContainerStyled = styled.div`
         height: 33rem;
         border: var(--border-gray-3);
         border-radius: var(--border-radius-xl);
-        box-shadow: 4px 11px 13px 4px rgba(44, 44, 44, 0.29);
+        /* box-shadow: 4px 11px 13px 4px rgba(44, 44, 44, 0.29); */
         position: relative;
         overflow: hidden;
         transition: filter 0.1s linear;

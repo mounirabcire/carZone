@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import FooterStyle from "../styles/FooterStyle";
 import Input from "./Input";

@@ -1,12 +1,19 @@
-import PostsContainerStyled from "../../styles/PostsStyle";
+import { useAppSelector } from "../../app/hooks";
+import PostsStyled from "../../styles/PostsStyle";
 import PostImage from "./PostImage";
 import PostMainInfo from "./PostMainInfo";
 import PostSubInfo from "./PostSubInfo";
 
-type PostCategory = "rent" | "sell" | "accessory";
+type MainCategory = "cars" | "accessories";
+type SecondaryCategory = "rent" | "sell" | "accessories";
 type FuelType = "petrol" | "diesel" | "hybrid" | "electric";
 type Transmission = "automatic" | "manual";
 type Currency = "USD" | "EUR" | "DZD";
+
+interface PostCategory {
+    mainCategory: MainCategory;
+    secondaryCategory: SecondaryCategory;
+}
 
 interface RentDetails {
     transmission: Transmission;
@@ -63,14 +70,24 @@ interface PostProps {
 }
 
 function Posts({ posts }: PostsProps) {
+    const postOption = useAppSelector((state) => state.homePostOption);
+
+    // Empty posts data
     if (!posts.length) return null;
 
+    const postsToDisplay =
+        postOption === "view all"
+            ? [...posts]
+            : posts.filter(
+                  (post) => post.postCategory.mainCategory === postOption
+              );
+
     return (
-        <PostsContainerStyled>
-            {posts.map((post, idx) => (
+        <PostsStyled>
+            {postsToDisplay.map((post, idx) => (
                 <Post key={idx} post={post} />
             ))}
-        </PostsContainerStyled>
+        </PostsStyled>
     );
 }
 
@@ -97,7 +114,7 @@ function Post({ post }: PostProps) {
 
             <PostMainInfo
                 details={PostMainDetails}
-                postCategory={postCategory}
+                postCategory={postCategory.secondaryCategory}
                 postName={postName}
             />
 

@@ -1,10 +1,11 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-const NavStyle = styled.nav`
+const NavStyle = styled(motion.nav)`
     width: 100%;
     padding: var(--spacing-4) 0;
-    background-color: var(--gray-0);
-    box-shadow: 0px 10px 13px -3px rgba(0,0,0,0.1);
+    background-color: var(--gray-5);
+    box-shadow: 0px 10px 13px -3px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
     z-index: 99;
