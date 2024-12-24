@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 const FooterStyle = styled.footer`
+    padding-top: 3.2rem;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-10);
     overflow: hidden;
     background-color: var(--gray-0);
+    border-top: var(--border-gray-2);
     position: relative;
 
     .footer--top {
