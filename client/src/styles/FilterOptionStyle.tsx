@@ -15,8 +15,9 @@ const FilterOptionsContainer = styled.div`
         gap: var(--spacing-6);
 
         & .filter-options__item {
+            user-select: none;
             cursor: pointer;
-            transition: color 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: color 0.5s cubic-bezier(0.5, 1, 0.89, 1);
         }
 
         & .filter-options__item.active {
@@ -34,8 +35,8 @@ const FilterOptionsContainer = styled.div`
         left: 0;
         transform: translateY(-50%);
         z-index: -1;
-        transition: left 0.65s cubic-bezier(0.34, 1.56, 0.64, 1),
-            width 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transition: left 0.5s cubic-bezier(0.5, 1, 0.89, 1),
+            width 0.5s cubic-bezier(0.5, 1, 0.89, 1);
     }
 `;
 
