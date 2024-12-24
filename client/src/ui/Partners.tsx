@@ -1,4 +1,5 @@
 import PartnersContainerStyled from "../styles/PartnersStyle";
+import LazyImg from "./LazyImg";
 
 interface PartnersProps {
     partners: { fullName: string; profession: string; img: string }[];
@@ -14,8 +15,8 @@ function Partners({ partners }: PartnersProps) {
     return (
         <PartnersContainerStyled>
             <div className="slider">
-                {partners.map((partner, idx) => (
-                    <Partner key={idx} partner={partner} />
+                {partners.map((partner) => (
+                    <Partner key={partner.fullName} partner={partner} />
                 ))}
             </div>
             <div className="slider">
@@ -36,7 +37,7 @@ function Partner({ partner }: PartnerProps) {
                 <h6 className="partner__fullName">{fullName}</h6>
                 <p className="partner__profession">{profession}</p>
             </div>
-            <img src={img} alt={profession} className="partner__pic" />
+            <LazyImg src={img} alt={profession} className="partner__pic" />
         </div>
     );
 }
